@@ -10,7 +10,8 @@ calculator.addEventListener('click', (e) => {
     } else if (currentKey === "=") {
         let answer = calculate(formula);
         content.textContent = answer;
-        formula = answer;
+        formula = [answer];
+        console.log(formula)
         return
     }
     if (formula.length >= 1) {
@@ -32,10 +33,11 @@ calculator.addEventListener('click', (e) => {
             console.log(formula)
             return
         }
+    } else {
+        formula.push(parseInt(currentKey));
+        console.log(formula)
+        content.textContent = contentPrnt(formula);    
     }
-    formula.push(parseInt(currentKey));
-    console.log(formula)
-    content.textContent = contentPrnt(formula);
 })
 
 function contentPrnt(arr) {
