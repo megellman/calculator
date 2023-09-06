@@ -2,7 +2,6 @@ body{
     font-family: monospace;
 }
 #calculator-keys{
-
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -14,15 +13,17 @@ body{
     background-color: #FF68BF;
     border-radius: 20px;
 }
-#calculator-keys p {
+#calculator-keys p{
     font-size: 1rem;
 }
 #content{
+    font-size: 1.5rem;
     background-color: white;
-    border: 5px solid #FF68BF;
-    border-radius: 16px;
+    border: 25px solid #FF68BF;
+    border-radius: 35px;
     height: 40px;
-    padding-top: 20px;
+    padding-top: 15px;
+    margin: 0;
 }
 
 

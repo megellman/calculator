@@ -64,6 +64,5 @@ function calculate(arr) {
             sum = sum / num;
         }
     }
-    
     return sum
 }
