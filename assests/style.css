@@ -1,20 +1,28 @@
 body{
     font-family: monospace;
 }
+#calculator-keys{
+    /* width: 300px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-wrap: wrap;
+    /* text-align: center; */
+    /* background-color: #FF68BF; */
+    justify-content: center;
+    /* border-radius: 20px; */
+}
 #calculator-container{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
-    flex-wrap: wrap;
     text-align: center;
     background-color: #FF68BF;
-    justify-content: center;
     border-radius: 20px;
 }
-#calculator-container p {
+#calculator-keys p {
     font-size: 1rem;
 }
-#calculator-container #content{
+#content{
     background-color: white;
     border: 5px solid #FF68BF;
     border-radius: 16px;

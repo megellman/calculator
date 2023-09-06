@@ -1,7 +1,8 @@
-let calculator = document.querySelector('#calculator-container');
+let calculator = document.querySelector('#calculator-keys');
 let content = document.querySelector("#content");
 let formula = [];
 calculator.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (e.target.tagName === "P") {
         let currentKey = e.target.textContent;
         if (currentKey === "c") {
@@ -9,7 +10,7 @@ calculator.addEventListener('click', (e) => {
             content.textContent = " ";
             return
         } else if (currentKey === "=") {
-            calculate(formula);
+            content.textContent = calculate(formula);
             return
         }
         if (formula.length >= 1) {
@@ -50,8 +51,28 @@ function contentPrnt(arr) {
 }
 
 function calculate(arr) {
-    let num = "";
-    for (let i = 0; i < arr.length; i++) {
-
+    // 1 + 2
+    let sum = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        let num = parseInt(arr[i + 1]);
+        console.log('num is ' + num)
+        let operator = parseInt(arr[i]);
+        console.log('operator is '+ operator);
+        if(operator === '+'){
+            console.log(sum, operator, num);
+            sum += num;
+            console.log(sum)
+        } else if (operator === '-'){
+            console.log(sum, operator, num);
+            sum -= num;
+        } else if(operator === '*'){
+            console.log(sum, operator, num);
+            sum = sum * num;
+        } else if(operator === '/'){
+            console.log(sum, operator, num);
+            sum = sum / num;
+        }
     }
+    console.log(sum)
+    return sum
 }
